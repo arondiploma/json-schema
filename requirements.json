@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "title": "Zendesk App - Requirements",
+  "properties": {
+    "custom_objects": {
+      "type": "object",
+      "description": "Sunshine Objects",
+      "properties": {
+        "custom_object_types": {
+          "type": "array",
+          "description": "Object Types/Tables",
+          "items": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string",
+                "description": "Type/table name"
+              },
+              "schema": {
+                "type": "object",
+                "description": "Type/table schema defination",
+                "properties": {
+                  "properties": {
+                    "type": "object",
+                    "description": "Type/table fields",
+                    "additionalProperties": {
+                      "type": "object",
+                      "description": "Field name",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "description": "Field data type",
+                          "enum": ["string", "number", "integer", "boolean"]
+                        },
+                        "description": {
+                          "type": "string",
+                          "description": "Comment about the field"
+                        }
+                      }
+                    }
+                  },
+                  "required": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "uniqueItems": true,
+                    "default": []
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
