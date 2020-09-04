@@ -50,6 +50,28 @@
               }
             }
           }
+        },
+        "custom_object_relationship_types": {
+          "type": "array",
+          "description": "Object Relationships",
+          "items": {
+            "type": "object",
+            "description": "Relationship",
+            "properties": {
+              "key": {
+                "type": "string",
+                "description": "Name of relationship"
+              },
+              "source": {
+                "type": ["string", "array"],
+                "description": "Object's source name. String = One and Array = Many"
+              },
+              "target": {
+                "type": ["string", "array"],
+                "description": "Object's target name. String = One and Array = Many"
+              }
+            }
+          }
         }
       }
     }
